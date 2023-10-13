@@ -1,12 +1,13 @@
 ```mermaid
+%%{init: { 'sequence': {'useMaxWidth':false} } }%%
 sequenceDiagram
     actor user
     participant M as Mint NFT
-    
+
     user->>+ M:From Profile click on Mint NFT <br/> /asset/create
     create participant U as Upload
     M ->>U:Upload image
-    U->>+B:/nft-contents/create-presigned-url 
+    U->>+B:/nft-contents/create-presigned-url
     Note over U,B:Method Post
     B -)-U:Response
     participant B as MPC B

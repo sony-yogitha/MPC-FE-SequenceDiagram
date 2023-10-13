@@ -1,14 +1,15 @@
 ```mermaid
+%%{init: { 'sequence': {'useMaxWidth':false} } }%%
 sequenceDiagram
     actor user
     participant A as Account Setting
     participant O as Other Settings
-    
+
     user->>+A: Click on setting after login from dropdown?
     Note over A:/account/settings?tab=account
     create participant E as Edit Account
     A ->>E:(AccountSettingsForm/index.tsx)/pages/[account]/settings.tsx
-    
+
     E->>+B: /users/profile/update
     E ->>+B:onDataSubmit(formData)
     E ->>+B:TAccountSettingsFormValues
@@ -21,9 +22,9 @@ sequenceDiagram
     Note over O:Method Get
     B -)+A: Response
     participant B as MPC B
-    
 
-    
-    
-   
+
+
+
+
 ```
